@@ -50,7 +50,9 @@ export const socialLinks = [
 export const aboutSection = {
   title: "About Me",
   description:
-    "I’m a Frontend Developer who loves building clean, responsive, and smooth user experiences using React and modern web technologies.",
+    "Frontend Developer who loves turning ideas into clean, fast, and visually appealing user interfaces. I specialize in building modern web applications using Next.js, React, TypeScript, Tailwind CSS, ReactQuery and Redux, with a strong focus on performance, accessibility, and smooth user experience.",
+  moreDescription:
+    "I’m constantly learning, improving, and experimenting with new technologies—and I love building things that feel good to use. Whether it's crafting clean code, designing intuitive UI, or optimizing performance, I aim to create experiences that users enjoy and remember.",
   whatIDo: [
     {
       icon: FaCode,
@@ -76,20 +78,20 @@ export const aboutSection = {
 };
 
 export const skills = [
-  { name: "HTML", level: 90 },
-  { name: "CSS", level: 85 },
-  { name: "Tailwind CSS", level: 85 },
-  { name: "JavaScript", level: 80 },
-  { name: "React", level: 80 },
-  { name: "Next.js", level: 75 },
-  { name: "TypeScript", level: 70 },
-  { name: "Styled Components", level: 75 },
-  { name: "Redux", level: 70 },
-  { name: "React Query", level: 65 },
-  { name: "Context API", level: 80 },
-  { name: "Git", level: 80 },
-  { name: "GitHub", level: 85 },
-  { name: "Figma", level: 70 },
+  { name: "HTML", level: 90, background: "bg-blue-500" },
+  { name: "CSS", level: 85, background: "bg-teal-500" },
+  { name: "Tailwind CSS", level: 85, background: "bg-indigo-500" },
+  { name: "JavaScript", level: 80, background: "bg-yellow-500" },
+  { name: "React", level: 80, background: "bg-purple-500" },
+  { name: "Next.js", level: 75, background: "bg-green-500" },
+  { name: "TypeScript", level: 70, background: "bg-emerald-500" },
+  { name: "Styled Components", level: 75, background: "bg-lime-500" },
+  { name: "Redux", level: 70, background: "bg-pink-800" },
+  { name: "React Query", level: 65, background: "bg-cyan-500" },
+  { name: "Context API", level: 80, background: "bg-blue-500" },
+  { name: "Git", level: 80, background: "bg-slate-500" },
+  { name: "GitHub", level: 85, background: "bg-sky-500" },
+  { name: "Figma", level: 70, background: "bg-violet-300" },
 ];
 
 export const experiences = [

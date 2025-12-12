@@ -17,9 +17,9 @@ function Navbar() {
   }
   return (
     <>
-      <header className="flex justify-between px-5 md:px-10 lg:px-15 items-center py-5 relative">
+      <header className="flex justify-between px-5 md:px-10 lg:px-25 items-center py-5 relative">
         <motion.h1
-          className="text-blue-500 text-xl font-semibold"
+          className="text-blue-500 text-2xl font-semibold"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 20 }}
           transition={{
@@ -58,7 +58,7 @@ function Navbar() {
         </nav>
 
         {/* social links */}
-        <ul className="md:flex gap-2 hidden ">
+        <ul className="md:flex gap-4 hidden ">
           {socialLinks.map(({ icon: Icon, url }, index) => (
             <li key={index}>
               <motion.a
@@ -76,7 +76,7 @@ function Navbar() {
                   damping: 25,
                   delay: 0.2 + index * 0.2,
                 }}
-                className="text-slate-100 hover:text-blue-500 text-xl transition-colors duration-300"
+                className="text-slate-100 hover:text-blue-500 text-2xl transition-colors duration-300"
                 href={url}
                 target="_blank"
               >
