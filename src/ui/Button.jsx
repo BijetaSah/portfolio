@@ -12,7 +12,7 @@ function Button({
   styles = "",
   shadowColor,
 }) {
-  const baseStyles = `flex items-center px-4 py-2 hover:shadow-lg hover:shadow-${shadowColor} rounded-sm flex gap-2 items-center transition-colors text-center duration-300 cursor-pointer hover:${bgColor.replace(
+  const baseStyles = `flex items-center px-4 py-3 hover:shadow-lg hover:shadow-${shadowColor} rounded-lg flex gap-2 items-center transition-colors text-center duration-300 cursor-pointer hover:${bgColor.replace(
     "800",
     "900"
   )}`;
@@ -32,7 +32,7 @@ function Button({
           duration: 0.2,
         }}
       >
-        <Icon className={`text-base md:text-xl ${textColor}`} />
+        <Icon className={`text-xl ${textColor}`} />
         <span>{children}</span>
       </motion.a>
     );
@@ -51,7 +51,7 @@ function Button({
           duration: 0.2,
         }}
       >
-        <Icon className={`text-base md:text-xl ${textColor}`} />
+        <Icon className={`text-xl ${textColor}`} />
 
         <span>{children}</span>
       </motion.a>
@@ -68,7 +68,7 @@ function Button({
       }}
       className={`${baseStyles} ${styles} ${bgColor} ${textColor}`}
     >
-      <Icon className={`text-base md:text-xl ${textColor}`} />
+      <Icon className={`text-xl ${textColor}`} />
       <span>{children}</span>
     </motion.button>
   );

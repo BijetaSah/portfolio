@@ -28,7 +28,7 @@ function Hero() {
       </div>
 
       {/* button */}
-      <div className="flex md:items-center gap-4 sm:flex-row flex-col mt-10">
+      <div className="flex md:items-center gap-6 md:gap-8 sm:flex-row flex-col mt-10">
         {socialLinks.map(({ name, icon, url, background, shadowColor }) => (
           <Button
             key={name}
