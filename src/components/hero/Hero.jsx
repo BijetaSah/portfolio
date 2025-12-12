@@ -3,13 +3,11 @@ import { FaDownload } from "react-icons/fa6";
 
 import Button from "../../ui/Button";
 import { socialLinks } from "../../contants/data";
+import SectionContainer from "../../ui/SectionContainer";
 
 function Hero() {
   return (
-    <section
-      id="hero"
-      className="flex flex-col items-center text-slate-300 md:py-20 px-10 py-10 md:px-15"
-    >
+    <SectionContainer id="hero" styles="flex flex-col items-center">
       {/* location */}
       <p className="flex items-center gap-2 tracking-widest text-teal-100 mb-5">
         <FaLocationDot className="text-teal-600 " /> Kolkata, India
@@ -51,7 +49,7 @@ function Hero() {
           Download Resume
         </Button>
       </div>
-    </section>
+    </SectionContainer>
   );
 }
 
