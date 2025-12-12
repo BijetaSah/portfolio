@@ -1,9 +1,12 @@
 import { TbBrandGithubFilled } from "react-icons/tb";
 import { FaLinkedin } from "react-icons/fa";
-import { navLinks } from "../../contants/data";
+
+import { navLinks, socialLinks } from "../../contants/data";
 import { IoMdMenu } from "react-icons/io";
 import { IoClose } from "react-icons/io5";
+
 import { motion } from "motion/react";
+
 import { useState } from "react";
 
 function Navbar() {
@@ -14,7 +17,7 @@ function Navbar() {
   }
   return (
     <>
-      <header className="flex justify-between px-5 md:px-10 lg:px-15 items-center py-5">
+      <header className="flex justify-between px-5 md:px-10 lg:px-15 items-center py-5 relative">
         <motion.h1
           className="text-blue-500 text-xl font-semibold"
           initial={{ opacity: 0, x: -20 }}
@@ -55,54 +58,37 @@ function Navbar() {
         </nav>
 
         {/* social links */}
-        <div className="md:flex gap-2 hidden ">
-          <motion.a
-            initial={{
-              opacity: 0,
-              y: -20,
-            }}
-            animate={{
-              opacity: 1,
-              y: 1.5,
-            }}
-            transition={{
-              type: "spring",
-              stiffness: 100,
-              damping: 25,
-              duration: 0.3,
-            }}
-            className="text-slate-100 hover:text-blue-500 text-xl transition-colors duration-300"
-            href="https://github.com/BijetaSah"
-            target="_blank"
-          >
-            <TbBrandGithubFilled />
-          </motion.a>
-          <motion.a
-            initial={{
-              opacity: 0,
-              y: -20,
-            }}
-            animate={{
-              opacity: 1,
-              y: 1.5,
-            }}
-            transition={{
-              type: "spring",
-              stiffness: 100,
-              damping: 25,
-              duration: 0.4,
-            }}
-            className="text-slate-100 hover:text-blue-500 text-xl transition-colors duration-300"
-            href="https://linkedin.com/in/bijeta-sah"
-            target="_blank"
-          >
-            <FaLinkedin />
-          </motion.a>
-        </div>
+        <ul className="md:flex gap-2 hidden ">
+          {socialLinks.map(({ icon: Icon, url }, index) => (
+            <li key={index}>
+              <motion.a
+                initial={{
+                  opacity: 0,
+                  y: -20,
+                }}
+                animate={{
+                  opacity: 1,
+                  y: 1.5,
+                }}
+                transition={{
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 25,
+                  delay: 0.2 + index * 0.2,
+                }}
+                className="text-slate-100 hover:text-blue-500 text-xl transition-colors duration-300"
+                href={url}
+                target="_blank"
+              >
+                <Icon />
+              </motion.a>
+            </li>
+          ))}
+        </ul>
 
         {/* mobile nav button */}
         <motion.button
-          className="text-2xl text-slate-400 cursor-pointer"
+          className="text-2xl text-slate-400 md:hidden cursor-pointer"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.9 }}
           onClick={handleToggleNav}
@@ -123,7 +109,7 @@ function Navbar() {
 function MobileNav({ onToggleNav }) {
   return (
     <nav
-      className="text-slate-400 md:hidden w-full bg-inherit"
+      className="text-slate-400 md:hidden w-full bg-inherit absolute left-0"
       initial={{ opacity: 0, x: -100 }}
       animate={{ opacity: 1, y: 100 }}
       transition={{

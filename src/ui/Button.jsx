@@ -6,13 +6,16 @@ function Button({
   icon: Icon,
   children,
   bgColor = "bg-slate-800/90",
-  textColor,
+  textColor = "text-slate-50",
   filePath,
   allowDownLoad = false,
   styles = "",
   shadowColor,
 }) {
-  const baseStyles = `flex items-center px-4 py-2 hover:shadow-[0_0_5px_${shadowColor}] transition-colors duration-300`;
+  const baseStyles = `flex items-center px-4 py-2 hover:shadow-lg hover:shadow-${shadowColor} rounded-sm flex gap-2 items-center transition-colors text-center duration-300 cursor-pointer hover:${bgColor.replace(
+    "800",
+    "900"
+  )}`;
 
   if (allowDownLoad && filePath)
     return (
@@ -29,6 +32,7 @@ function Button({
           duration: 0.2,
         }}
       >
+        <Icon className={`text-base md:text-xl ${textColor}`} />
         <span>{children}</span>
       </motion.a>
     );
@@ -47,6 +51,8 @@ function Button({
           duration: 0.2,
         }}
       >
+        <Icon className={`text-base md:text-xl ${textColor}`} />
+
         <span>{children}</span>
       </motion.a>
     );
@@ -62,7 +68,7 @@ function Button({
       }}
       className={`${baseStyles} ${styles} ${bgColor} ${textColor}`}
     >
-      <Icon className={`text-2xl ${textColor}`} />
+      <Icon className={`text-base md:text-xl ${textColor}`} />
       <span>{children}</span>
     </motion.button>
   );
